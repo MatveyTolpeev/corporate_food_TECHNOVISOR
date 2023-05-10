@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from corporate_food.views import main_page, about, contacts, create_order, get_order, \
+    delete_order, all_dishes, create_dish, delete_dish
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', main_page, name="main_page"),
+    path('order', create_order, name="create_order"),
+    path('about', about, name="about"),
+    path('contacts', contacts, name="contacts"),
+    path('order/new', create_order, name="new_order"),
+    path('order/delete', delete_order, name="delete_order"),
+    path('all_dishes', all_dishes, name="all_dishes"),
+    path('delete_dish', delete_dish, name="delete_dish"),
 ]
